@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { ChevronDown, ChevronRight, X } from "lucide-react";
-import {
-  SidebarItemProps,
-  getSidebarItems,
-  getUtilityItems,
-} from "@/config/SidebarRegistry";
+import { SidebarItemProps, getSidebarItems } from "@/config/SidebarRegistry";
 
 // Add props for sidebar visibility and toggle function
 interface SidebarProps {
@@ -61,7 +57,7 @@ const SidebarItem = ({
                 key={index}
                 to={child.to || "#"}
                 className={cn(
-                  "block py-2 px-3 rounded-md text-sm",
+                  "block py-2 px-3 rounded-md text-base",
                   child.active
                     ? "bg-sidebar-hover/50 text-primary"
                     : "hover:bg-sidebar-hover"
@@ -145,7 +141,6 @@ export default function Sidebar({
   }, [isMobileOpen, isTablet, setIsMobileOpen]);
 
   const sidebarItems = getSidebarItems(currentPath);
-  const utilityItems = getUtilityItems(currentPath);
 
   // Dynamic style for the sidebar height based on header height
   const sidebarStyle = {
@@ -192,17 +187,6 @@ export default function Sidebar({
             {sidebarItems.map((item, index) => (
               <SidebarItem key={index} {...item} />
             ))}
-          </div>
-
-          <div className="pt-4 mt-4 border-t border-sidebar-border">
-            <p className="text-xs font-semibold px-3 mb-2 uppercase tracking-wider text-muted-foreground">
-              Resources
-            </p>
-            <div className="space-y-1">
-              {utilityItems.map((item, index) => (
-                <SidebarItem key={index} {...item} />
-              ))}
-            </div>
           </div>
         </div>
 

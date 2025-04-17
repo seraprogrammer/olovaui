@@ -3,8 +3,8 @@ import {
   Home,
   Layers,
   CreditCard,
-  Settings,
-  Users,
+  // Settings,
+  // Users,
   Square,
 } from "lucide-react";
 
@@ -41,21 +41,27 @@ export const getSidebarItems = (currentPath: string): SidebarItemProps[] => [
         to: "/components/tabs",
         active: currentPath === "/components/tabs",
       },
+      {
+        icon: <CreditCard className="h-4 w-4 text-orange-500" />,
+        label: "Header",
+        to: "/components/header",
+        active: currentPath === "/components/header",
+      },
     ],
   },
 ];
 
-export const getUtilityItems = (currentPath: string): SidebarItemProps[] => [
-  {
-    icon: <Users className="h-5 w-5 text-yellow-500" />,
-    label: "Team",
-    to: "/team",
-    active: currentPath === "/team",
-  },
-  {
-    icon: <Settings className="h-5 w-5 text-violet-500" />,
-    label: "Settings",
-    to: "/settings",
-    active: currentPath === "/settings",
-  },
-];
+// export const getUtilityItems = (currentPath: string): SidebarItemProps[] => [
+//   {
+//     icon: <Users className="h-5 w-5 text-yellow-500" />,
+//     label: "Team",
+//     to: "/team",
+//     active: currentPath === "/team",
+//   },
+//   {
+//     icon: <Settings className="h-5 w-5 text-violet-500" />,
+//     label: "Settings",
+//     to: "/settings",
+//     active: currentPath === "/settings",
+//   },
+// ];

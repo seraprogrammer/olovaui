@@ -1,7 +1,7 @@
 import TabsUI from "@/registry/components/Tabs/tabs1";
 import TabsUI2 from "@/registry/components/Tabs/tabs2";
 import TabsUI3 from "@/registry/components/Tabs/tabs3";
-import { ComponentDoc } from "@/uiEngine/uiEngine";
+import { ComponentDoc } from "@/uiEngine/ViewEngine";
 
 export default function TabsUIDoc() {
   return (
